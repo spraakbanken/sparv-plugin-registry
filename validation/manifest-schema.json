@@ -1,0 +1,180 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://??/manifest-schema.json",
+    "title": "Sparv Pipeline manifest",
+    "description": "Manifest describing a plugin for the Sparv Pipeline",
+    "definitions": {
+        "name": {
+            "description": "The name of the Sparv plugin",
+            "type": "string"
+        },
+        "description": {
+            "description": "A short description of the plugin",
+            "type": "string"
+        },
+        "long_description": {
+            "description": "An optional long description of the plugin",
+            "type": "string"
+        },
+        "source": {
+            "description": "A URL pointing to the source code of the plugin",
+            "type": "string"
+        },
+        "author": {
+            "description": "Name of the author of the plugin (may be an organisation)",
+            "type": "string"
+        },
+        "author_email": {
+            "description": "E-mail address of the author",
+            "type": "string"
+        },
+        "license": {
+            "description": "Name of the license for the plugin",
+            "type": "string"
+        },
+        "python_requires": {
+            "description": "Python version required for running the plugin",
+            "type": "string"
+        },
+        "requires_additional_installs": {
+            "description": "Boolean stating whether it is necessary to install additional software in order to run this plugin",
+            "type": "boolean"
+        },
+        "platforms": {
+            "description": "An optional list of platforms (operating systems) where this plugin and its tools can be run",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "languages": {
+            "description": "An optional list of language codes defining what languages the plugin can be used for",
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "minItems": 1,
+            "uniqueItems": true
+        },
+        "version": {
+            "description": "The version of the plugin",
+            "type": "string"
+        },
+        "install_pointer": {
+            "description": "Pointer installation with pip (name of the package on PyPI or a reference to a GitHub repository)",
+            "type": "string"
+        },
+        "sparv_pipeline_requires": {
+            "description": "Sparv Pipeline version required for running the plugin",
+            "type": "string"
+        }
+    },
+    "type": "object",
+    "properties": {
+        "name": {
+            "$ref": "#/definitions/name"
+        },
+        "description": {
+            "$ref": "#/definitions/description"
+        },
+        "long_description": {
+            "$ref": "#/definitions/long_description"
+        },
+        "source": {
+            "$ref": "#/definitions/source"
+        },
+        "author": {
+            "$ref": "#/definitions/author"
+        },
+        "author_email": {
+            "$ref": "#/definitions/author"
+        },
+        "license": {
+            "$ref": "#/definitions/license"
+        },
+        "python_requires": {
+            "$ref": "#/definitions/python_requires"
+        },
+        "requires_additional_installs": {
+            "$ref": "#/definitions/requires_additional_installs"
+        },
+        "platforms": {
+            "$ref": "#/definitions/platforms"
+        },
+        "languages": {
+            "$ref": "#/definitions/languages"
+        },
+        "versions": {
+            "type": "array",
+            "description": "A list of version objects where each objects describes one version of the plugin.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "version": {
+                        "$ref": "#/definitions/version"
+                    },
+                    "install_pointer": {
+                        "$ref": "#/definitions/install_pointer"
+                    },
+                    "sparv_pipeline_requires": {
+                        "$ref": "#/definitions/sparv_pipeline_requires"
+                    },
+                    "name": {
+                        "$ref": "#/definitions/name"
+                    },
+                    "description": {
+                        "$ref": "#/definitions/description"
+                    },
+                    "long_description": {
+                        "$ref": "#/definitions/long_description"
+                    },
+                    "source": {
+                        "$ref": "#/definitions/source"
+                    },
+                    "author": {
+                        "$ref": "#/definitions/author"
+                    },
+                    "author_email": {
+                        "$ref": "#/definitions/author"
+                    },
+                    "license": {
+                        "$ref": "#/definitions/license"
+                    },
+                    "python_requires": {
+                        "$ref": "#/definitions/python_requires"
+                    },
+                    "requires_additional_installs": {
+                        "$ref": "#/definitions/requires_additional_installs"
+                    },
+                    "platforms": {
+                        "$ref": "#/definitions/platforms"
+                    },
+                    "languages": {
+                        "$ref": "#/definitions/languages"
+                    }
+                },
+                "required": [
+                    "version",
+                    "install_pointer",
+                    "sparv_pipeline_requires"
+                ],
+                "additionalProperties": false
+            },
+            "minItems": 1
+        }
+    },
+    "required": [
+        "name",
+        "description",
+        "source",
+        "author",
+        "author_email",
+        "license",
+        "python_requires",
+        "requires_additional_installs",
+        "versions"
+    ],
+    "additionalProperties": false
+}
