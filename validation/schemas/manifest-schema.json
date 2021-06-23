@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://??/manifest-schema.json",
+    "$id": "https://raw.githubusercontent.com/spraakbanken/sparv-plugin-registry/dev/validation/schemas/manifest-schema.json",
     "title": "Sparv Pipeline manifest",
     "description": "Manifest describing a plugin for the Sparv Pipeline",
     "definitions": {

@@ -7,7 +7,7 @@ import jsonschema
 import yaml
 import rich
 
-MANIFEST_SCHEMA = "manifest-schema.json"
+MANIFEST_SCHEMA = "schemas/main-schema.json"
 MANIFESTS_DIR = "../manifests"
 
 
